@@ -10,11 +10,10 @@ module.exports ={
 function signToken(user){
     const payload = {
         id: user.id,
-      username:user.username,
-      department:user.department //this will come from the database
+      username:user.username
     };
     
-    const secret = process.env.JWT_SECRET;
+    const secret = process.env.JWT_SECRET ; //|| 'is it secret, is it safe?'
     
     const options = {
       expiresIn: '1h',
