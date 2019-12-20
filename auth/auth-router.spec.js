@@ -10,18 +10,6 @@ describe('auth-router.js', () => {
     });
 
     describe('register POST', () => {//SECRET KEY MUST HAVE A VALUE, TESTING ENV NOT USING JWT_SECRET !!!!! why?
-        it('should', function(){
-
-            const formData = {username: "Primus", password: "foist_!#ded"}
-            return testingFrom(server)
-                    .post('/api/auth/register')
-                    .send(formData)
-                    .then(res => {
-            
-                        expect(res.body.message).toMatch("Created user Primus with an id of 1")
-                    });
-        }
-    )
 
         it('should', function(){
             return testingFrom(server)
@@ -32,12 +20,31 @@ describe('auth-router.js', () => {
                     });
         }
     )
+});
 
-    });
 
+    describe('register POST', () => {//SECRET KEY MUST HAVE A VALUE, TESTING ENV NOT USING JWT_SECRET !!!!! why?
+
+        it('should', function(){
+
+            const formData = {username: "Secondus", password: "foist_!#ded"}
+            return testingFrom(server)
+                    .post('/api/auth/register')
+                    .send(formData)
+                    .then(res => {
+                        console.log(res.body)
+                        expect(res.body.message).toMatch("Created user Secondus with an id of 1")
+                        
+                    });
+        }
+    )
+
+});
+
+   
     describe('login POST', () => {
         it('should', function(){
-            const formData = {username: "Primus", password: "foist_!#ded"}
+            const formData = {username: "Tertius", password: "foist_!#ded"}
             return testingFrom(server)
                     .post('/api/auth/register')
                     .send(formData)
@@ -51,9 +58,11 @@ describe('auth-router.js', () => {
                     });
         }
     )
+});
+    describe('login POST', () => {
 
         it('should', function(){
-            const formData = {username: "Primus", password: "foist_!#ded"}
+            const formData = {username: "Quartus", password: "foist_!#ded"}
             return testingFrom(server)
                     .post('/api/auth/register')
                     .send(formData)
