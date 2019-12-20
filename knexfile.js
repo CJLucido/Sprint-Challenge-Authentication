@@ -12,7 +12,7 @@ module.exports = {
   testing: {//knex migrate:latest --env testing
     client: 'sqlite3',
     connection: {
-      filename: './data/tester.db3'
+      filename: './database/tester.db3'
     },
     useNullAsDefault: true,
     pool: {
