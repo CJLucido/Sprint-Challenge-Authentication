@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 
 const tokenHelpers = require('../api/tokenHelpers')
 
+const Users = require('../api/users-model')
+
 router.post('/register', (req, res) => {
   // implement registration
 
