@@ -5,7 +5,7 @@ const db = require('../database/dbConfig')
 
 describe('jokes-router.js', () => {
 
-    beforeEach(async () => {
+    afterEach(async () => {
         await db('users').truncate();
     });
 
@@ -29,7 +29,7 @@ describe('jokes-router.js', () => {
                                 .set({token})
                                 .then(res =>{
                 
-                                    expect(res.status).toBe(201)}
+                                    expect(res.status).toBe(200)}
                                     )
                         });
                     });
@@ -57,7 +57,7 @@ describe('jokes-router.js', () => {
                             .set({token})
                             .then(res =>{
             
-                                expect(Array.isArray(res.body)).toBe(false)}
+                                expect(Array.isArray(res.body)).toBe(true)}
                                 )
                     });
                 });
