@@ -29,13 +29,14 @@ describe('jokes-router.js', () => {
                                 .set({token})
                                 .then(res =>{
                 
-                                    expect(res.status).toBe(200)}
+                                    expect(res.status).toBe(201)}
                                     )
                         });
                     });
         }
     )
 });
+
 
     describe('jokes GET ALL', () => {
 
@@ -56,7 +57,7 @@ describe('jokes-router.js', () => {
                             .set({token})
                             .then(res =>{
             
-                                expect(Array.isArray(res.body)).toBe(true)}
+                                expect(Array.isArray(res.body)).toBe(false)}
                                 )
                     });
                 });

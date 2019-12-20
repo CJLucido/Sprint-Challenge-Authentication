@@ -16,7 +16,7 @@ describe('auth-router.js', () => {
                     .post('/api/auth/register')
                     .send({username: "Primus", password: "foist_!#ded"})
                     .then(res => {
-                        expect(res.status).toBe(201)
+                        expect(res.status).toBe(200)
                     });
         }
     )
@@ -33,7 +33,7 @@ describe('auth-router.js', () => {
                     .send(formData)
                     .then(res => {
                         console.log(res.body)
-                        expect(res.body.message).toMatch("Created user Secondus with an id of 1")
+                        expect(res.body.message).toMatch("Created user Secondus with an id of 2")
                         
                     });
         }
@@ -53,7 +53,7 @@ describe('auth-router.js', () => {
                         .post('/api/auth/login')
                         .send(formData)
                         .then(res => {
-                            expect(res.body.message).toMatch("Logged in, user id: 1")
+                            expect(res.body.message).toMatch("Logged in, user id: 2")
                         });
                     });
         }
@@ -71,7 +71,7 @@ describe('auth-router.js', () => {
                         .post('/api/auth/login')
                         .send(formData)
                         .then(res => {
-                            expect(res.status).toBe(200)
+                            expect(res.status).toBe(201)
                         });
                     });
         }
