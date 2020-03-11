@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+The purpose of using sessions is to give the server control over client access of an application. With sessions the server can provide a session ID to the client, which the server will store in its memory. Since the server stores this session ID in memory it can terminate/destroy the validity of the ID at any moment.
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+Bcrypt adds a salt to a password and then encrypts it for security. It also does server side decryption for access.
 
 - [ ] What does bcrypt do to slow down attackers?
 
+In addition to the abilities stated above, bcrypt adds a layer of security by hashing a password some specified number of times set on the server-side. This is stronger than encryption because it is a one way process. With encryption an attacker can potentially decrypt a password with long standing rainbow tables, with hashing they have to unencrypt the password+salt potentially thousands of times. 
+
 - [ ] What are the three parts of the JSON Web Token?
+
+A JSON Web Token has a header, a payload, and a secret. The header contains claims about the general settings/information of the token. The payload contains the data being sent back from the server. The secret contains a string the server uses to verify the token has not been tampered with by the client. 
 
 ## Minimum Viable Product
 
